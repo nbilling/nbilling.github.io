@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="mobile-web-app-capable" content="yes" />
@@ -19,98 +20,224 @@
 
 <body>
   <div id="container">
-    <main>
-      <div id="flex">        
-        <main>
-            <h1>nbilling's webpage</h1>
-            <img src="nnr214.gif"/>
-            <h3>2024-09-19</h3>
-            <p>Welcome to the first post of nbilling's webpage!</p>
-            <p>I promise future posts will be shorter and lighter, this one ended up being a sort of a confession.</p>
-            <p>
-              I will post here about making games, or other programming. But if I'm being honest I mostly just like programming games.
-              I've started many game projects that I never finished, but two games that I did finish are
-              <a href="http://nbilling.itch.io/megacollider">MegaCollider</a> and
-              <a href="http://nbilling.itch.io/sprawlracer">SprawlRacer</a>. Each of them I finished in about 3 months, starting with
-              MegaCollider.
-            </p>
-            <p>
-              Prior to making MegaCollider I had been working on a game named
-              <a href="https://youtu.be/PfXV07qJ6v8?si=GqBr0MhMw-Zbtdt7">TetraMage</a> for close to 3 <strong>years</strong> without
-              being close to releasing it. At that point I felt, on the one hand really glad that I had been working consistently
-              on this game for so long, but on the other hand rather frustrated with the pace of progress. I still hadn't released
-              anything! TetraMage had itself been inspired by the idea that maybe if I scaled down the scope of my prior game ideas
-              to something "boring" in terms of the underlying technology and focus all my efforts on just finishing something fun,
-              then I could stop starting and quickly abandoning prototypes. 
-            </p>
-            <p>
-              When I reached peak frustration with TetraMage (in late 2023?) I actually started an even more grandiose project that
-              I wasted months on before finally getting a good idea. Make the smallest possible thing that is fun to me and that I can
-              release. Time box it to 3 months-- any features that don't make it or bugs that I can't fix just get dropped at the end.
-              That one was MegaCollider. Almost no art assets, no level design, almost all the physics is just PhysX in Unity out of
-              the box. But I think it's fun and just recently I took a look at it after months of not thinking about it and it was
-              much better than I remember. 
-            </p>
-            <p>
-              I learned a bunch of interesting lessons (Note: interesting for me-- I once got some good advice from a colleague to the
-              effect of "just because a problem was hard for you doesn't make it a hard problem"), I was proud of finishing it, and
-              felt so great being able to start from scratch on my next game. The next one relaxed some of the constraints of the
-              former. Now there were going to be art assets, but I was working alone so only things I could pull off myself. There
-              would be level design, but again it has to be something I'm capable of on my own in 3 months. I was still going to use
-              the Unity engine and-- importantly!-- I was going to reuse as much code as possible. By the way that was SprawlRacer.
-            </p>
-            <p>
-              Being able to reuse so much code in SprawlRacer was a lightbulb moment for me. Reusing code doesn't have to mean
-              packaging it into a library with unit tests and putting it in a public repo. Frankly that kind of thing is such a drag
-              and I really wonder how (or if?) people who do this with game code are able to be productive. Maybe they work at game
-              companies with too many programmers solving the same problems, who knows? At my own work obviously I engage in this sort
-              of thing but there it's culturally ingrained and probably domain-appropriate (we don't ship a boxed product every X years,
-              let alone an entertainment product).
-            </p>
-            <p>
-              Somewhere in this period I started intensely enjoying making these games, rather than just doing it because I didn't
-              want to die without producing any work that was personally meaningful. I changed my daily schedule so I could get up
-              several hours before my family does and work on a game while I was fresh, rather than doing it after my kids went to
-              sleep, and frequently just being too tired to get anything done. I also started to realize what parts of the process
-              were causing hang-ups or making it less fun.
-            </p>
-            <p>
-              The biggest one is "bad constraints". Most constraints are good, I reckon.
-              Having a deadline is good, obligations in your life that dictate a daily rhythm are good, having a budget is good,
-              having some fixed rendering, physics, editor, etc. technology is good. Bad ones are things that take away your ability
-              to "just get on with it", maybe things that move the locus of control from inside to outside. Being constrained to
-              art "assets" from a store or free website is a "bad" constraint to me. I found that I'd rather create crappy art myself.
-              "Crappy art" constraint is a good constraint to me. Needing to hire someone or depend on someone who's not already said
-              they were going to work with you is a "bad" constraint to me. Having to make a simple design overly complicated to fit it
-              into a really general-purpose techonology stack is a "bad" constraint IMO too. This last one I've coped with in Unity for
-              a while but more about that another time.
-            </p>
-            <p>
-              When I finished SprawlRacer I had several things I was unhappy with about the game that I wanted to do differently, which
-              is a huge perk of making things on a short time limit. For the next game I was committed to it being a top-down shooter
-              with animated sprites (even if I had to make the crappy animations myself!), a campaign of hand-made levels, and puzzles.
-              As I was wrapping up SprawlRacer I took a risk (risk for me, being that I am terrified of rejection) by reaching out to
-              several people who had posted online that they were artists looking for programmers to collaborate with. I was still
-              committed to starting and finishing when I said for this next game, but if someone else wanted to collaborate with me
-              then that's a win-win. If not then I plan accordingly and do it on my own-- and I had already started producing
-              prototype crappy art for the game at that point. Happily one person responded and we hit it off, so that game is
-              underway and I'm glad is very much on track.
-            </p>
-            <p>
-              In future posts I'll share some of what I've learned from my current project-- my first one with a collaborator, maybe
-              some media from that game, and my plans for once that's released.
-            </p>
-            <p>
-              Modest as the two games I've finished are, I am still proud of them and very grateful for the lessons that I've learned
-              that led to me making them. It took me decades of not getting started, and then doing it the wrong way, but I can't be
-              mad now that I feel like I'm finally going in the right direction.
-            <p>Cheers!</p>
-            <p>-nbilling</p>
-        </main>
+    <div id="topBar">It's the place where nbilling writes down his personal thoughts on making games!</div>
+    <div id="headerArea">
+      <div id="header">
+        <span>nbilling's webpage</span>
+      </div>
+      <!-- <nav id="navbar">
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+          </ul>
+      </nav> -->
+    </div>
+    <div id="flex">
+      <main>
+        <img src="nnr214.gif" />
+        <h3>2024-09-20</h3>
+        <p>
+          Today I'll talk a bit about my experience setting up the Unity editor to edit levels for a game. You have the
+          freedom in Unity to make a "level" whatever you want. It could be a self-contained scene, it could be entirely
+          your
+          own data scheme and reconstituted onto a blank scene at load time, or anything in between.
+        </p>
+        <p>
+          SprawlRacer didn't allow saving in the middle of a race so I never had to think about how to
+          serialize/deserialize
+          the state of all the game objects in the scene. Static level "geometry" consisted of layered tilemaps, dynamic
+          objects like pedestrians and pick-ups would get spawned in by spawner objects, the spline the AI used to
+          navigate
+          the track was just a built-in Unity spline component. Unity made laying out all those elements in each track
+          fairly intuitive so, to me, using the Unity editor as my level editor was a no-brainer. The definitions of all
+          these
+          elements was done with Unity prefabs since there weren't many of them to keep track of, although I had started
+          to move
+          some things into json files when there were a lot of variations (eg. the roster of AI racers, the lists of
+          tracks
+          for each division).
+        </p>
+        <p>
+          This was my first experience designing levels and coming up with a workflow for creating them. You can go
+          pretty far
+          with the Unity editor just plopping prefabs down, but it didn't take long for me to get frustrated by the
+          fiddly-ness
+          and difficulty in "reading" the scene view of the map. I made a few changes to the editor experience for my
+          own
+          convenience. Most notable of which was creating custom Gizmo textures for object spawners, racer starting
+          points, etc.
+          Below is a screenshot of the Unity "scene view" of a SprawlRacer level being edited, notice the yellow Gizmos
+          all
+          over.
+        </p>
+        <button class="imgLink"><img src="SprawlRacerLevelEditing.png" /></button>
+        <aside>Also notice the crappy art, hehe</aside>
+        <p>
+          Almost all the physics of SprawlRacer was built in PhysX stuff too. Dynamic objects had built-in 2d box/circle
+          colliders and static geometry used the built-in precombined tilemap collision mesh component.
+        </p>
+        <p>
+          I was totally new to designing a level format, I knew I was going to make all the levels myself, the level
+          state didn't need to be serialized/deserialized, and rendering/physics wasn't going to deviate from the Unity
+          built-in happy path. So naturally I never considered making a custom level editor and level format. My
+          "levels" ended
+          up being somewhat of a hybrid-- common scenes that get loaded first and then the track scene layered on top of
+          that
+          additively.
+        </p>
+        <p>
+          I did learn a few things along the way that started me down the custom format path, however. First, the idea
+          of
+          separating the dynamic object (eg. pick-up) from the marker in the level that spawns it is a step towards
+          thinking
+          of a level format as distinct from a Unity scene. Second, the convenience of defining all the AI racers and
+          track/division info as json made me want to move as much game data as possible into a custom format (text
+          files) for
+          my next game. Below is an example of some json defining an AI racer in the SprawlRacer game data.
+        </p>
+        <button class="imgLink"><img src="SprawlRacerJson.png" /></button>
+        <aside>
+          Not pictured is how <strong>all</strong> game data resided in a single gigantic text file and this made it a
+          pain to
+          edit. That's a small detail that I'd change for the next game...
+        </aside>
+
+        <h3>2024-09-19</h3>
+        <p>Welcome to the first post of nbilling's webpage!</p>
+        <p>I promise future posts will be shorter and lighter, this one ended up being a sort of a confession.</p>
+        <p>
+          I will post here about making games, or other programming. But if I'm being honest I mostly just like
+          programming games.
+          I've started many game projects that I never finished, but two games that I did finish are
+          <a href="http://nbilling.itch.io/megacollider">MegaCollider</a> and
+          <a href="http://nbilling.itch.io/sprawlracer">SprawlRacer</a>. Each of them I finished in about 3 months,
+          starting with
+          MegaCollider.
+        </p>
+        <p>
+          Prior to making MegaCollider I had been working on a game named
+          <a href="https://youtu.be/PfXV07qJ6v8?si=GqBr0MhMw-Zbtdt7">TetraMage</a> for close to 3 <strong>years</strong>
+          without
+          being close to releasing it. At that point I felt, on the one hand really glad that I had been working
+          consistently
+          on this game for so long, but on the other hand rather frustrated with the pace of progress. I still hadn't
+          released
+          anything! TetraMage had itself been inspired by the idea that maybe if I scaled down the scope of my prior
+          game ideas
+          to something "boring" in terms of the underlying technology and focus all my efforts on just finishing
+          something fun,
+          then I could stop starting and quickly abandoning prototypes.
+        </p>
+        <p>
+          When I reached peak frustration with TetraMage (in late 2023?) I actually started an even more grandiose
+          project that
+          I wasted months on before finally getting a good idea. Make the smallest possible thing that is fun to me and
+          that I can
+          release. Time box it to 3 months-- any features that don't make it or bugs that I can't fix just get dropped
+          at the end.
+          That one was MegaCollider. Almost no art assets, no level design, almost all the physics is just PhysX in
+          Unity out of
+          the box. But I think it's fun and just recently I took a look at it after months of not thinking about it and
+          it was
+          much better than I remember.
+        </p>
+        <p>
+          I learned a bunch of interesting lessons (Note: interesting for me-- I once got some good advice from a
+          colleague to the
+          effect of "just because a problem was hard for you doesn't make it a hard problem"), I was proud of finishing
+          it, and
+          felt so great being able to start from scratch on my next game. The next one relaxed some of the constraints
+          of the
+          former. Now there were going to be art assets, but I was working alone so only things I could pull off myself.
+          There
+          would be level design, but again it has to be something I'm capable of on my own in 3 months. I was still
+          going to use
+          the Unity engine and-- importantly!-- I was going to reuse as much code as possible. By the way that was
+          SprawlRacer.
+        </p>
+        <p>
+          Being able to reuse so much code in SprawlRacer was a lightbulb moment for me. Reusing code doesn't have to
+          mean
+          packaging it into a library with unit tests and putting it in a public repo. Frankly that kind of thing is
+          such a drag
+          and I really wonder how (or if?) people who do this with game code are able to be productive. Maybe they work
+          at game
+          companies with too many programmers solving the same problems, who knows? At my own work obviously I engage in
+          this sort
+          of thing but there it's culturally ingrained and probably domain-appropriate (we don't ship a boxed product
+          every X years,
+          let alone an entertainment product).
+        </p>
+        <p>
+          Somewhere in this period I started intensely enjoying making these games, rather than just doing it because I
+          didn't
+          want to die without producing any work that was personally meaningful. I changed my daily schedule so I could
+          get up
+          several hours before my family does and work on a game while I was fresh, rather than doing it after my kids
+          went to
+          sleep, and frequently just being too tired to get anything done. I also started to realize what parts of the
+          process
+          were causing hang-ups or making it less fun.
+        </p>
+        <p>
+          The biggest one is "bad constraints". Most constraints are good, I reckon.
+          Having a deadline is good, obligations in your life that dictate a daily rhythm are good, having a budget is
+          good,
+          having some fixed rendering, physics, editor, etc. technology is good. Bad ones are things that take away your
+          ability
+          to "just get on with it", maybe things that move the locus of control from inside to outside. Being
+          constrained to
+          art "assets" from a store or free website is a "bad" constraint to me. I found that I'd rather create crappy
+          art myself.
+          "Crappy art" constraint is a good constraint to me. Needing to hire someone or depend on someone who's not
+          already said
+          they were going to work with you is a "bad" constraint to me. Having to make a simple design overly
+          complicated to fit it
+          into a really general-purpose techonology stack is a "bad" constraint IMO too. This last one I've coped with
+          in Unity for
+          a while but more about that another time.
+        </p>
+        <p>
+          When I finished SprawlRacer I had several things I was unhappy with about the game that I wanted to do
+          differently, which
+          is a huge perk of making things on a short time limit. For the next game I was committed to it being a
+          top-down shooter
+          with animated sprites (even if I had to make the crappy animations myself!), a campaign of hand-made levels,
+          and puzzles.
+          As I was wrapping up SprawlRacer I took a risk (risk for me, being that I am terrified of rejection) by
+          reaching out to
+          several people who had posted online that they were artists looking for programmers to collaborate with. I was
+          still
+          committed to starting and finishing when I said for this next game, but if someone else wanted to collaborate
+          with me
+          then that's a win-win. If not then I plan accordingly and do it on my own-- and I had already started
+          producing
+          prototype crappy art for the game at that point. Happily one person responded and we hit it off, so that game
+          is
+          underway and I'm glad is very much on track.
+        </p>
+        <p>
+          In future posts I'll share some of what I've learned from my current project-- my first one with a
+          collaborator, maybe
+          some media from that game, and my plans for once that's released.
+        </p>
+        <p>
+          Modest as the two games I've finished are, I am still proud of them and very grateful for the lessons that
+          I've learned
+          that led to me making them. It took me decades of not getting started, and then doing it the wrong way, but I
+          can't be
+          mad now that I feel like I'm finally going in the right direction.
+        <p>Cheers!</p>
+        <p>-nbilling</p>
+      </main>
     </div>
 
     <div class="h-card" rel="author">
-      <img class="u-photo" alt="My profile photo" src="nbilling.jpg" width="25%" height="25%"/>
+      <img class="u-photo" alt="My profile photo" src="nbilling.jpg" width="25%" height="25%" />
       <p class="p-note">
         I'm a programmer of games and other things.
       </p>
@@ -124,31 +251,31 @@
     </div>
 
     <footer id="footer" style="margin-top: 10px;"> Copyright 2024 nbilling, all rights reserved.</footer>
-    </main>
+
   </div>
 
-<!-- THIS IS THE CSS !-->
-<style>
-  /* user styles */
+  <!-- THIS IS THE CSS !-->
+  <style>
+    /* user styles */
 
-  /* styles are what change the color and sizes of stuff on your site. */
+    /* styles are what change the color and sizes of stuff on your site. */
 
-  /* these are variables that are being used in the code
+    /* these are variables that are being used in the code
 these tended to confuse some people, so I only kept 
 the images as variables */
 
-  :root {
-      --header-image: url('https://sadhost.neocities.org/images/layouts/wp.jpeg');
+    :root {
+      --header-image: url('Banner.png');
       --body-bg-image: url('stars4.gif');
 
       /* colors */
       --content: #43256E;
-  }
+    }
 
-  /* if you have the URL of a font, you can set it below */
-  /* feel free to delete this if it's not your vibe */
+    /* if you have the URL of a font, you can set it below */
+    /* feel free to delete this if it's not your vibe */
 
-  /* this seems like a lot for just one font and I would have to agree 
+    /* this seems like a lot for just one font and I would have to agree 
 but I wanted to include an example of how to include a custom font.
 If you download a font file you can upload it onto your Neocities
 and then link it! Many fonts have separate files for each style
@@ -156,36 +283,40 @@ and then link it! Many fonts have separate files for each style
 
 */
 
-  @font-face {
+    @font-face {
       font-family: Nunito;
       src: url('https://sadhost.neocities.org/fonts/Nunito-Regular.ttf');
-  }
+    }
 
-  @font-face {
+    @font-face {
       font-family: Nunito;
       src: url('https://sadhost.neocities.org/fonts/Nunito-Bold.ttf');
       font-weight: bold;
-  }
+    }
 
-  @font-face {
+    @font-face {
       font-family: Nunito;
       src: url('https://sadhost.neocities.org/fonts/Nunito-Italic.ttf');
       font-style: italic;
-  }
+    }
 
-  @font-face {
+    @font-face {
       font-family: Nunito;
       src: url('https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf');
       font-style: italic;
       font-weight: bold;
-  }
+    }
 
-  @font-face {
-    font-family: "FreePixel"; 
-    src: url("FreePixel.ttf") format("truetype");
-  }
+    @font-face {
+      font-family: "FreePixel";
+      src: url("FreePixel.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "GunMetal";
+      src: url("GunmetalRegular-eeAx.ttf") format("truetype");
+    }
 
-  body {
+    body {
       font-family: 'FreePixel', sans-serif;
       font-size: 12pt;
       margin: 0;
@@ -194,124 +325,144 @@ and then link it! Many fonts have separate files for each style
       background-size: 65px;
       color: #fceaff;
       background-image: var(--body-bg-image);
-  }
+    }
 
-  * {
+    * {
       box-sizing: border-box;
-  }
+    }
 
-  /* below this line is CSS for the layout */
 
-  /* the "container" is what wraps your entire website */
-  /* if you want something (like the header) to be Wider than
+
+    .imgLink {
+      border: none;
+      background: none;
+    }
+
+    .imgLink img {
+      height: 8rem;
+    }
+
+    .imgLink:active img,
+    .imgLink:focus img {
+      height: 100%;
+    }
+
+    /* below this line is CSS for the layout */
+
+    /* the "container" is what wraps your entire website */
+    /* if you want something (like the header) to be Wider than
 the other elements, you will need to move that div outside
 of the container */
-  #container {
+    #container {
       max-width: 900px;
       /* this is the width of your layout! */
       /* if you change the above value, scroll to the bottom
 and change the media query according to the comment! */
       margin: 0 auto;
       /* this centers the entire page */
-  }
+    }
 
-  /* the area below is for all links on your page
+    /* the area below is for all links on your page
 EXCEPT for the navigation */
-  #container a {
+    #container a {
       color: #dda5a5;
       font-weight: bold;
       /* if you want to remove the underline
 you can add a line below here that says:
 text-decoration:none; */
-  }
+    }
 
-  #header {
+    #header {
       width: 100%;
-      background-color: #5e4e8c;
+      font-family:"GunMetal";
+      font-size: 64pt;
+      color: #bd4444;
+      background-color: #161616;
       /* header color here! */
-      height: 150px;
+      height: 130px;
       /* this is only for a background image! */
       /* if you want to put images IN the header, 
 you can add them directly to the <div id="header"></div> element! */
       background-image: var(--header-image);
+      image-rendering: pixelated;
       background-size: 100%;
-  }
+    }
 
-  /* navigation section!! */
-  #navbar {
+    /* navigation section!! */
+    #navbar {
       height: 40px;
       background-color: #13092D;
       /* navbar color */
       width: 100%;
-  }
+    }
 
-  #navbar ul {
+    #navbar ul {
       display: flex;
       padding: 0;
       margin: 0;
       list-style-type: none;
       justify-content: space-evenly;
-  }
+    }
 
-  #navbar li {
+    #navbar li {
       padding-top: 10px;
-  }
+    }
 
-  /* navigation links*/
-  #navbar li a {
+    /* navigation links*/
+    #navbar li a {
       color: #a5ddd7;
       /* navbar text color */
       font-weight: 800;
       text-decoration: none;
       /* this removes the underline */
-  }
+    }
 
-  /* navigation link when a link is hovered over */
-  #navbar li a:hover {
+    /* navigation link when a link is hovered over */
+    #navbar li a:hover {
       color: #a49cba;
       text-decoration: underline;
-  }
+    }
 
-  #flex {
+    #flex {
       display: flex;
-  }
+    }
 
-  /* this colors BOTH sidebars
+    /* this colors BOTH sidebars
 if you want to style them separately,
 create styles for #leftSidebar and #rightSidebar */
-  aside {
+    aside {
       background-color: #241445;
       width: 200px;
       padding: 20px;
       font-size: smaller;
       /* this makes the sidebar text slightly smaller */
-  }
+    }
 
 
-  /* this is the color of the main content area,
+    /* this is the color of the main content area,
 between the sidebars! */
-  main {
+    main {
       background-color: #292834;
       flex: 1;
       padding: 20px;
       order: 2;
-  }
+    }
 
-  /* what's this "order" stuff about??
+    /* what's this "order" stuff about??
 allow me to explain!
 if you're using both sidebars, the "order" value
 tells the CSS the order in which to display them.
 left sidebar is 1, content is 2, and right sidebar is 3! */
 
-  */ #leftSidebar {
+    */ #leftSidebar {
       order: 1;
-  }
+    }
 
-  #rightSidebar {
+    #rightSidebar {
       order: 3;
-  }
+    }
 
-  footer {
+    footer {
       background-color: #13092D;
       /* background color for footer */
       width: 100%;
@@ -319,58 +470,60 @@ left sidebar is 1, content is 2, and right sidebar is 3! */
       padding: 10px;
       text-align: center;
       /* this centers the footer text */
-  }
+    }
 
-  h1,
-  h2,
-  h3 {
+    h1,
+    h2,
+    h3 {
       color: #afdda5;
-  }
+    }
 
-  h1 {
+    h1 {
       font-size: 25px;
-  }
+    }
 
-  strong {
+    strong {
       /* this styles bold text */
       color: #afdda5;
-  }
+    }
 
-  /* this is just a cool box, it's the darker colored one */
-  .box {
+    /* this is just a cool box, it's the darker colored one */
+    .box {
       background-color: #13092D;
       border: 1px solid #afdda5;
       padding: 10px;
-  }
+    }
 
-  /* CSS for extras */
+    /* CSS for extras */
 
-  #topBar {
+    #topBar {
       width: 100%;
       height: 30px;
       padding: 10px;
       font-size: smaller;
       background-color: #13092D;
-  }
+    }
 
-  img.u-photo { border-radius: 50%; }
+    img.u-photo {
+      border-radius: 50%;
+    }
 
-  /* BELOW THIS POINT IS MEDIA QUERY */
+    /* BELOW THIS POINT IS MEDIA QUERY */
 
-  /* so you wanna change the width of your page? 
+    /* so you wanna change the width of your page? 
 by default, the container width is 900px.
 in order to keep things responsive, take your new height,
 and then subtrack it by 100. use this new number as the 
 "max-width" value below
 */
 
-  @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 800px) {
       #flex {
-          flex-wrap: wrap;
+        flex-wrap: wrap;
       }
 
       aside {
-          width: 100%;
+        width: 100%;
       }
 
       /* the order of the items is adjusted here for responsiveness!
@@ -378,22 +531,22 @@ since the sidebars would be too small on a mobile device.
 feel free to play around with the order!
 */
       main {
-          order: 1;
+        order: 1;
       }
 
       #leftSidebar {
-          order: 2;
+        order: 2;
       }
 
       #rightSidebar {
-          order: 3;
+        order: 3;
       }
 
       #navbar ul {
-          flex-wrap: wrap;
+        flex-wrap: wrap;
       }
-  }
-</style>
+    }
+  </style>
 </body>
 
 </html>
