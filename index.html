@@ -40,6 +40,74 @@
         <div>
           <img src="nnr214.gif" />
         </div>
+        <h3>2024-09-25 Part 2</h3>
+        <p>
+          During work on this top-down shooter game it also happened that I had to start ditching the PhysX
+          implementations of motion and collision detection. The precise detail of movement in a game, to me,
+          is too important to leave to a black box. So the first thing to go was the player's motion-- now the
+          player controller code can manually keep track of its velocity and apply acceleration and drag, and
+          "collide n' slide" with level geometry exactly the way that feels good. After that it didn't make
+          sense to use PhysX to move monsters either. In this kind of game the monsters move at static speeds,
+          they don't need any inertia. The player controller, monsters, projectiles-- now they all have custom
+          physics code.
+        </p>
+        <p>
+          Initially, to get field of view and fog of war to work they way I wanted, I had to write a raycasting
+          algorithm on the game's tilemaps (remember this is a top-down game). So in spite of this being a 3D
+          game engine rendering quads in an orthographic projection where the distance never changes, and all
+          this other bending over backwards... I still end up raycasting in a tile grid like a wolf3d
+          renderer (<a href="https://lodev.org/cgtutor/raycasting.html">this is my ALL TIME favourite webpage</a>
+          on raycasting, although I didn't know it existed at the time I was writing the raycaster for the
+          top-down shooter).
+        </p>
+        <p>
+          As all this is unfolding, I start thinking about my next game. I would love to do something 3D but I
+          don't want to transition to meshes yet. At this point I'm planning to keep using Unity for the
+          foreseeable future, so the first thing I have to work out is how to represent the 3D level geometry in
+          Unity. The file format doesn't really matter-- I mean it can't be a scene exactly because Unity is a
+          "true" 3D renderer-- but it can be tiles or linedefs, stored in binary or text. I could load that
+          stuff into Unity and generate a mesh (or meshes) for static level geometry and then use Unity's 3D
+          renderer to render the game.
+          </p>
+        <p>
+          I spent several weeks thinking about alternative implementations of that, but in the end it just
+          seemed like replacing all the physics in Unity and then generating mesh geometry to workaround the 3D
+          renderer is doing too much to shoehorn my game into the wrong engine. The straw that broke the camels
+          back was me trying to work out how to do collisions with level geometry. The simple thing to do would
+          be generating a mesh collider from the generated level mesh, but then how do you handle doors, lifts,
+          and moving platforms? You can keep track of vertices and move those around, but then to make collisions
+          work you'd have to update the mesh collider it generated. Every frame? No way will that run fast.
+        </p>
+        <p>
+          You could create a separate mesh for the level geometry that moves, and move that instead of moving
+          vertices. That's what a "true" 3D game would certainly do, but then it's making this geometry generation
+          system even more complicated, and it's not how this game is fundamentally structured.
+        </p>
+        <p>
+          It's as though I'd started running into all these kludges that would be necessary to accommodate the
+          basic structure of my game in Unity, before I'd even written a line of code. This is making me very
+          frustrated! Okay what if I take a step back. Rendering a map from linedefs is a bit overwhelming since
+          it's my first time writing the renderer and I'm doing it from scratch-- probably need real space
+          partitioning (eg. BSP) even to raycast against walls. Raycasting on a grid is much simpler, and I've
+          done it recently for my top-down shooter.
+        </p>
+        <p>
+          If level geometry is a grid then the same raycast algorithm works for rendering and for physics,
+          leaving aside how we render, LoS, and collide with dynamic objects. Doors work pretty elegantly in a
+          grid-- it's just one type of tile. The renderer can offset it from the walls by adjusting the height it
+          draws the columns of door, and the same thing works for making doors open/close vertically. Colliding 
+          with doors requires no special work at all, you just have overlap/raycast tests take the door state into
+          account.
+        </p>
+        <p>
+          So now I've got this decision to make: strip requirements way back to a wolf3d-like game and write my
+          own engine in C++, or keep hacking away at Unity and start generating meshes for 2.5D level geometry
+          with the aim of eventually tunneling out the "other side" into 3D with meshes and skeletal animation
+          in Unity where I can finally drop all the kludges and workarounds?
+        </p>
+        <p>
+          No spoilers, but you know which one sounds more exciting right?
+        </p>
         <h3>2024-09-25</h3>
         <p>
           Since I released SprawlRacer I've been working with a
