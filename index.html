@@ -40,6 +40,32 @@
         <div>
           <img src="nnr214.gif" />
         </div>
+        <h3>2024-09-25</h3>
+        <p>
+          Since I released SprawlRacer I've been working with a
+          <a href="https://bahototh.blogspot.com/"></a>great artist</a> on a top-down shooter
+          (<a href="https://www.youtube.com/watch?v=PtNPJlVJvK4">demo footage</a>). The level creation workflow
+          for this game is more involved than it was for SprawlRacer. The map is visually more complicated
+          and there are puzzles and encounters, all that stuff.
+        </p>
+        <p>
+          I'm glad that I had some experience making maps (and making a workflow for making maps...) in SprawlRacer
+          first. Lots of problems repeated and other ones that came up were less overwhelming because they were
+          extensions of what I'd seen before. I needed a trigger system for switches to open doors and for keys to
+          allow the player to manually open doors, teleporters needed to connect with one another, levels needed some
+          way to tell the game which level an exit led to. I didn't want to create versions of every door/trigger/exit
+          in the game data or in a Unity prefab, so for this kind of "edit time" configuration I put fields on the
+          spawner game objects that write their value to the object they spawn when the level first loads.
+        </p>
+        <p>
+          For some kinds of objects I found that a symbolic Gizmo wasn't easy enough to read, for example "props"
+          which vary greatly in size and whose colliders are important to the gameplay of a level. I had to write editor
+          scripts for prop spawners to read the size of colliders from game data and display it as a wireframe Gizmo.
+          It's cool that you can do this in Unity so easily, and it made we wonder what it would be like make a stripped
+          down level editor specialized for what my particular game needs. And maybe if I'm creating solutions to all
+          these things in Unity and carrying them forward from one project to the next, if I solved them in my own editor
+          then I could carry that forward too.
+        </p>
         <h3>2024-09-20</h3>
         <p>
           Today I'll talk a bit about my experience setting up the Unity editor to edit levels for a game. You have the
