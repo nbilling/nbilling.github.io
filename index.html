@@ -40,6 +40,53 @@
         <div>
           <img src="nnr214.gif" />
         </div>
+        <h3>2024-09-26</h3>
+        <p>
+          Today I want to write down thoughts I had on a C++ game
+          engine. Now that I'm on the home stretch with the top-down shooter in Unity and expanding content
+          for that, my mind is free to wander onto planning for next time.
+        </p>
+        <p>
+          I started reading <a href="">Game Programming in C++</a> by Sanjay Madhav and have found it a
+          <strong>surprisingly</strong> light read given the spooky subject matter. I like the "game object"
+          model he suggests, it's roughly like the UE one-- game objects are <strong>Actors</strong> and you
+          attach <strong>Components</strong> to them. Stuff like a sprite to be rendered is a Component (this
+          is also very similar to how you use Components in Unity of course). It has great sample code that
+          sets up this framework and uses it in an easy to follow way. I understand why it doesn't go into
+          object reuse (or I wasn't able to find it if he does) but I wish there were a chapter in the back
+          that discussed ways to pool and reuse Actors/Components. Ditto for custom binary formats and
+          custom tools for asset processing/creation. Enough of that I'm getting carried away again.
+        </p>
+        <p>
+          I'm glad I messed around with the projects from the book and went down the path of using SDL2, too.
+          SDL2 seems great so far. Maybe at some time in the future I'll want to pull out rendering code I'm
+          writing on top of SDL2 now and do it in OpenGL or Vulkan, but I doubt I'll need to for this next
+          project, and SDL2 handles input just fine.
+        </p>
+        <p>
+          After my little existential crisis about how to effectively pool the inheritance hierarchy of Actors
+          and Components was resolved, it was about time to have one for the format of maps and game data!
+          I've used json before for this kind of stuff, but for maps I don't think it's even worth trying to
+          use json. The requirements I settled on were that the overall system had to allow me to edit maps
+          graphically and game data in a normal text editor. For one thing that means I need to make my own
+          map editor, which I was already planning on, and that I either need to load game data as strings
+          or I need a compiler. So far so good. I had a near breakdown trying to get my VS C++ project to
+          automatically generate headers from flatbuffers .fbs files-- which involved going so far as to recreate
+          the entire project in cmake just so that cmake could figure out how to achieve that build step for me...
+          Ultimately, though I decided in the interest of my sanity that I would just use a custom, very simple,
+          text format for my game data files and write a custom parser and compiler for it (credit to
+          <a href="https://youtu.be/jlS1Y2-yKV0">javidx</a> for this inspiration).
+        </p>
+        <p>
+          My little untextured raycasting engine is humming along, it has a map editor with a paint brush and
+          an eraser. The UI is next up and I have many grandiose intentions toward that too. I think I will
+          have a visual tree like the Unity canvas where the nodes use their parents position as an offset when
+          drawing themselves but they can be as wide/tall as they want, there will be some function that runs
+          once per frame and does a "raycast" through the mouse pointer to find the highest Z-order bounding
+          box in the UI it's overlapping and send enter/exit/click events. I don't think UI objects will have
+          any components, they can just have nested objects that implement whatever functionality I want to
+          compose. Until that fails horribly, that's the plan.
+        </p>
         <h3>2024-09-25 Part 2</h3>
         <p>
           During work on this top-down shooter game it also happened that I had to start ditching the PhysX
