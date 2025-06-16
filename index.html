@@ -64,6 +64,45 @@
 
           All the c++ code initializing static arrays of info records and the enums to identify the elements of
           the arrays is generated with really a very simple python script from txt files stored with the code.
+          <br/><br/>
+          So eg. part of options.txt:
+          <pre><code>
+  # Name Type DefaultValue ShowInMenu MenuName
+
+  Fullscreen Bool false true Fullscreen
+          </code></pre>
+          Part of inputBindings.txt:
+          <pre><code>
+  # Name DefaultScancode DefaultMouseButton
+
+  # Player
+  Shoot UNKNOWN LEFT
+  MoveForward W NONE
+  MoveBackward S NONE
+  StrafeLeft A NONE
+  StrafeRight D NONE
+  Interact E NONE
+  Reload R NONE
+  Grenade G NONE
+  Melee Q NONE
+  Map M NONE
+  Pause ESCAPE NONE
+  Wep1 1 NONE
+  Wep2 2 NONE
+  Wep3 3 NONE
+  Wep4 4 NONE
+  MapEditor L NONE
+  Console GRAVE NONE
+
+  # Menus
+  MenuUp UP NONE
+  MenuDown DOWN NONE
+  MenuLeft LEFT NONE
+  MenuRight RIGHT NONE
+  MenuSubmit RETURN NONE
+  MenuCancel ESCAPE NONE
+  MenuDelete X NONE
+          </code></pre>
 
           This was at least the simplest system I could come up with to keep track of these things and make it
           easy to add more.
