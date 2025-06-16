@@ -50,27 +50,34 @@
           the key E assigned to it, and also the right mouse button. The key assigned to it never changes type
           (it's always a key), and the mouse button assigned to it never changes type (it's always a mouse
           button).
-
+        </p>
+        <p>
           Because the input bindings are homogeneous I put them in a fixed length array of struct (eg. it
           contains the key, the mouse button, and the controller button), whereas because the options are
           heterogeneous I put them in a fixed length array of union (eg. can be bool, int, float).
-
+        </p>
+        <p>
           At game start options and input bindings are read from ini files and if the player changes them they
           can be written back to those files. The info records for each option and input binding have a default
           value so everything can be restored to defaults, or a new ini can be generated if one isn't found.
-
+        </p>
+        <p>
           I plan to write the menus for changing options/input bindings using the same info records to make that
           fairly simple.
-
+        </p>
+        <p>
           All the c++ code initializing static arrays of info records and the enums to identify the elements of
           the arrays is generated with really a very simple python script from txt files stored with the code.
-          <br/><br/>
+        </p>
+        <p>
           So eg. part of options.txt:
           <pre><code>
   # Name Type DefaultValue ShowInMenu MenuName
 
   Fullscreen Bool false true Fullscreen
           </code></pre>
+        </p>
+        <p>
           Part of inputBindings.txt:
           <pre><code>
   # Name DefaultScancode DefaultMouseButton
@@ -103,7 +110,8 @@
   MenuCancel ESCAPE NONE
   MenuDelete X NONE
           </code></pre>
-
+        </p>
+        <p>
           This was at least the simplest system I could come up with to keep track of these things and make it
           easy to add more.
         </p>
