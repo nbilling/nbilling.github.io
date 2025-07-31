@@ -40,6 +40,66 @@
         <div>
           <img src="nnr214.gif" />
         </div>
+        <h3>2025-07-31</h3>
+        <p>
+          Since the last update I've done lots of UI work and written an experimental new renderer that supports
+          variable roof/ceiling/floor height per tile. I spent a while thinking about what the new anatomy of a
+          tile would be, eventually coming up with variable roof height, ceiling height, and floor height, and
+          a constant bedrock height for the engine in general.
+        </p>
+        <p>
+          The existing level geometry raycasting algorithm isn't sufficient for this task, because we need to know
+          not only the height of a wall where the ray entered a tile, but also where it exited (for example in
+          order to calculate where the ceiling/floor start/end, in screen Y, for that tile). We also no longer want
+          the algorithm to stop when it hits a wall, because there could be a wall visible behind it above or
+          below.
+        </p>
+        <p>
+          After the new raycast algorithm, I started out writing a purely vertical scanline renderer for experiment,
+          and this was fairly straight forward to do untextured. See:
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0LicIYl3j1Q?si=chw9Vvwc6UODQS91"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p>
+          So far so good, next is textures. I knew texturing the walls would be easier so I did that first, and it
+          worked more or less unchanged from my existing code that draws vertical strips of wall texture without
+          perspective correction.
+        </p>
+        <p>
+          Where I ran into a roadblock was texturing the ceilings/floors. My first attempt at this resulted in
+          horribly distorted textures. At this point the new renderer was only drawing vertical scanlines,
+          and without any perspective correction. I managed to fix part of the distortion by doing per-pixel
+          perspective correction for vertical strips of ceiling/floor texture (at great processing expense) but
+          another issue persisted whereby partially clipped areas of ceiling/floor would get stretched way out
+          of proportion. I never worked out (even conceptually) how to properly clip the ceiling/floors to avoid
+          that stretching-- I think I gave up after about a full day of debugging. At that point I recognized
+          that fixing this naive way of rendering ceilings/floors would be more effort than just implementing the
+          more optimal horizontal scanline method (what my existing ceiling/floor renderer does) for variable
+          heights.
+        </p>
+        <p>
+          The vertical scanline rendering code already calculates the screen Y where strips of ceiling/floor
+          should begin and end rendering, and it knows the height of the strip in world space, so it can save
+          this information up like Doom's visplanes. Then, in the horizontal scanline renderer we can use that
+          information to render ceiling/floor pixels at the right height. There are differences here to visplanes
+          which bear mentioning, such as we have tiles with fixed dimensions as opposed to Doom's sectors, and
+          we don't group together multiple vertical strips for a single tile like visplanes do for sectors, instead
+          we end up grouping together all vertical strips at the same height, which also means that when rendering
+          a height the texture being sampled will change pixel to pixel, as opposed to rendering a visplane which is
+          all sampled from a single texture.
+        </p>
+        <p>
+          Next, the horizontal scanline renderer also needs to be changed so that it does a pass for every height,
+          although it is simple to skip heights where no ceilings/floors are visible. Additionally for each height
+          we can keep track of the min/max screen Y with pixels to render and skip all the horizontal lines that
+          we know are empty. See:
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_3x_5AWvkY4?si=3pLcYD25lPBVhn9n"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <h3>2025-06-16</h3>
         <p>
           Yesterday and today I was working on the user-configurable game options and controls. I started out
